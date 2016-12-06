@@ -1,0 +1,36 @@
+security:
+    encoders:
+        Mindy\Bundle\MindyBundle\Model\User:
+            algorithm: bcrypt
+            cost: 12
+
+    providers:
+        admin:
+            id: admin.user_provider
+
+    firewalls:
+        admin:
+            pattern: ^/core
+            provider: admin
+            context: admin
+            anonymous: ~
+            switch_user: { role: ROLE_ADMIN }
+            form_login:
+                login_path: admin_login
+                check_path: admin_login
+            logout:
+                path: admin_logout
+                target: /
+                invalidate_session: true
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path: /core/
+                domain: ~
+
+    access_control:
+        - { path: ^/core/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/core/, roles: ROLE_ADMIN }
+
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+

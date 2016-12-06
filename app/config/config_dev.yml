@@ -1,0 +1,60 @@
+imports:
+    - { resource: config.yml }
+    - { resource: security.yml }
+
+parameters:
+    storage.media_dir: "%kernel.root_dir%/../web/media"
+    templates:
+        mode: 1
+
+orm:
+    connections:
+        default:
+            dbname: my_db
+            host: localhost
+            port: 3306
+            user: root
+            password: ''
+            driver: pdo_mysql
+
+monolog:
+    handlers:
+        console:
+            type: console
+
+        # this "file_log" key could be anything
+        file_log:
+            type: rotating_file
+            # log to var/logs/(environment).log
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            # log *all* messages (debug is lowest level)
+            level: debug
+            max_files: 10
+
+        syslog_handler:
+            type: syslog
+            # log error-level messages and higher
+            level: error
+
+services:
+    crm.auth.token_authenticator:
+        class: Mindy\Bundle\OrionBundle\Security\DebugTokenAuthenticator
+        arguments: [ "@translator" ]
+
+framework:
+    csrf_protection: true
+    session:
+        handler_id: ~
+    translator:
+        enabled: true
+        fallbacks: [en]
+    router:
+        enabled: true
+        resource: "%kernel.root_dir%/config/routing.yml"
+
+swiftmailer:
+    transport: ~
+    spool:
+        type: file
+        path: '%kernel.root_dir%/spool'
+    logging: '%kernel.debug%'

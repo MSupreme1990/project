@@ -2,7 +2,7 @@
 
 require(__DIR__ . '/../vendor/autoload.php');
 
-use Mindy\Component\Application\App;
+use Mindy\Application\App;
 
 $application = App::createInstance(\App\AppKernel::class, 'prod', false);
 

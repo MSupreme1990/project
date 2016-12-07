@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             
             // Extra Symfony bundles
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new \Oneup\FlysystemBundle\OneupFlysystemBundle(),
 
             // Mindy bundles
             new \Mindy\Bundle\PaginationBundle\PaginationBundle,

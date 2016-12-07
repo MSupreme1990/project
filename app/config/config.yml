@@ -4,6 +4,13 @@ parameters:
     kernel.secret: very-secret
     kernel.default_locale: ru
 
+oneup_flysystem:
+    adapters:
+        default:
+            local: { directory: '%kernel.root_dir%/../web/media' }
+    filesystems:
+        default: { adapter: default }
+
 monolog:
     handlers:
         file_log:

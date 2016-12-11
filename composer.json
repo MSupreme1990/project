@@ -30,7 +30,7 @@
     "symfony/expression-language": "~3.0",
     "symfony/templating": "~3.0",
     "doctrine/migrations": "^1.4",
-    "mindy/mindy": "dev-master",
+    "mindy/mindy": "~3.0",
     "oneup/flysystem-bundle": "^1.7"
   },
   "require-dev": {

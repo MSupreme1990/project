@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01f6506121db8febb403366dc418e322",
-    "content-hash": "f6a01e3babab6ac8a373098bbaf0901c",
+    "hash": "4a23f1f26e5bae16398801ec4aaa77a2",
+    "content-hash": "4fddf62cfb0109a28cd73870d85613cd",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -634,16 +634,16 @@
         },
         {
             "name": "mindy/mindy",
-            "version": "dev-master",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MindyPHP/Mindy.git",
-                "reference": "a4736646f734632cec2e7f87849763763ee791ee"
+                "reference": "bf8f5451c356bd368ff8d19db361d51262a9c59a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MindyPHP/Mindy/zipball/a4736646f734632cec2e7f87849763763ee791ee",
-                "reference": "a4736646f734632cec2e7f87849763763ee791ee",
+                "url": "https://api.github.com/repos/MindyPHP/Mindy/zipball/bf8f5451c356bd368ff8d19db361d51262a9c59a",
+                "reference": "bf8f5451c356bd368ff8d19db361d51262a9c59a",
                 "shasum": ""
             },
             "require": {
@@ -654,10 +654,16 @@
                 "mindy/mindy-bundle": "self.version",
                 "mindy/orm": "self.version",
                 "mindy/orm-bundle": "self.version",
+                "mindy/orm-fields": "self.version",
+                "mindy/orm-file-field": "self.version",
+                "mindy/orm-nested-set": "self.version",
+                "mindy/orm-slug-field": "self.version",
                 "mindy/pagination": "self.version",
                 "mindy/pagination-bundle": "self.version",
+                "mindy/query-builder": "self.version",
                 "mindy/template": "self.version",
-                "mindy/template-bundle": "self.version"
+                "mindy/template-bundle": "self.version",
+                "mindy/thumb": "self.version"
             },
             "require-dev": {
                 "cocur/slugify": "^2.3",
@@ -705,7 +711,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-12-07 18:47:20"
+            "time": "2016-12-08 13:16:34"
         },
         {
             "name": "monolog/monolog",
@@ -3633,9 +3639,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mindy/mindy": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

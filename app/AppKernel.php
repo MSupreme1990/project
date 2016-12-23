@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new \Mindy\Bundle\TemplateBundle\TemplateBundle,
             new \Mindy\Bundle\OrmBundle\OrmBundle,
             new \Mindy\Bundle\MindyBundle\MindyBundle,
+            new \Mindy\Bundle\AdminBundle\AdminBundle,
 
             // Project bundles
             new \App\Bundle\AppBundle\AppBundle()

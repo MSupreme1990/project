@@ -1,3 +1,6 @@
+imports:
+    - { resource: "admin.yml" }
+
 parameters:
     mail.from: "noreply@my-site.com"
     kernel.charset: UTF-8

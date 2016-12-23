@@ -31,11 +31,11 @@
     "symfony/templating": "~3.0",
     "doctrine/migrations": "^1.4",
     "mindy/mindy": "~3.0",
-    "oneup/flysystem-bundle": "^1.7"
+    "oneup/flysystem-bundle": "^1.7",
+    "symfony/process": "^3.2"
   },
   "require-dev": {
     "symfony/debug": "~3.0",
-    "symfony/process": "~3.0",
     "symfony/var-dumper": "~3.0"
   }
 }

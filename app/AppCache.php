@@ -8,7 +8,7 @@
 
 namespace App;
 
-use Mindy\Bundle\FrameworkBundle\HttpCache\HttpCache;
+use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
 
 class AppCache extends HttpCache
 {

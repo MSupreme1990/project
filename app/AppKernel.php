@@ -1,6 +1,12 @@
 <?php
 
-namespace App;
+/*
+ * This file is part of Mindy Framework.
+ * (c) 2017 Maxim Falaleev
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
@@ -22,24 +28,36 @@ class AppKernel extends Kernel
     {
         return [
             // Symfony bundles
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle,
-            new \Symfony\Bundle\MonologBundle\MonologBundle,
-            new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle,
-            new \Symfony\Bundle\SecurityBundle\SecurityBundle,
-            
-            // Extra Symfony bundles
-            new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new \Oneup\FlysystemBundle\OneupFlysystemBundle(),
+            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+
+            // Extra bundles
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Oneup\FlysystemBundle\OneupFlysystemBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Misd\PhoneNumberBundle\MisdPhoneNumberBundle(),
+            new SymfonyBundles\JsonRequestBundle\SymfonyBundlesJsonRequestBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
             // Mindy bundles
-            new \Mindy\Bundle\PaginationBundle\PaginationBundle,
-            new \Mindy\Bundle\TemplateBundle\TemplateBundle,
-            new \Mindy\Bundle\OrmBundle\OrmBundle,
-            new \Mindy\Bundle\MindyBundle\MindyBundle,
-            new \Mindy\Bundle\AdminBundle\AdminBundle,
+            new Mindy\Bundle\SeoBundle\SeoBundle(),
+            new Mindy\Bundle\MenuBundle\MenuBundle(),
+            new Mindy\Bundle\PaginationBundle\PaginationBundle(),
+            new Mindy\Bundle\TemplateBundle\TemplateBundle(),
+            new Mindy\Bundle\OrmBundle\OrmBundle(),
+            new Mindy\Bundle\FormBundle\FormBundle(),
+            new Mindy\Bundle\FileBundle\FileBundle(),
+            new Mindy\Bundle\MindyBundle\MindyBundle(),
+            new Mindy\Bundle\AdminBundle\AdminBundle(),
+            new Mindy\Bundle\MailBundle\MailBundle(),
+            new Mindy\Bundle\CKEditorBundle\CKEditorBundle(),
+            new Mindy\Bundle\SentryBundle\SentryBundle(),
+            new Mindy\Bundle\SitemapBundle\SitemapBundle(),
 
             // Project bundles
-            new \App\Bundle\AppBundle\AppBundle()
+            new Company\Bundle\AppBundle\AppBundle(),
         ];
     }
 
@@ -48,7 +66,7 @@ class AppKernel extends Kernel
      */
     public function getCacheDir()
     {
-        return $this->rootDir . '/runtime/cache/' . $this->environment;
+        return $this->rootDir.'/runtime/cache/'.$this->environment;
     }
 
     /**
@@ -56,7 +74,7 @@ class AppKernel extends Kernel
      */
     public function getLogDir()
     {
-        return $this->rootDir . '/runtime/logs/' . $this->environment;
+        return $this->rootDir.'/runtime/logs/'.$this->environment;
     }
 
     /**
@@ -66,6 +84,6 @@ class AppKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
 }

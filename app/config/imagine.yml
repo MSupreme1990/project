@@ -1,0 +1,22 @@
+liip_imagine:
+    loaders:
+        default:
+            flysystem:
+                filesystem_service: oneup_flysystem.default_filesystem
+    data_loader: default
+    resolvers:
+        default:
+            flysystem:
+                filesystem_service: oneup_flysystem.default_filesystem
+                root_url:           /
+                cache_prefix:       media/cache
+    filter_sets:
+        admin_image:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [ 100, 100 ]
+                    mode: outbound
+                crop:
+                    size: [ 100, 100 ]
+                    start: [ 0, 0 ]

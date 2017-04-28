@@ -8,14 +8,10 @@
  * file that was distributed with this source code.
  */
 
-use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
+namespace Company\Bundle\AppBundle;
 
-class AppCache extends HttpCache
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class AppBundle extends Bundle
 {
-    protected function getOptions()
-    {
-        return [
-            'default_ttl' => 10,
-        ];
-    }
 }

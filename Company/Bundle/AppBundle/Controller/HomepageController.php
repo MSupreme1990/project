@@ -1,12 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: max
- * Date: 06/12/16
- * Time: 14:12
+
+/*
+ * This file is part of Mindy Framework.
+ * (c) 2017 Maxim Falaleev
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace App\Bundle\AppBundle\Controller;
+namespace Company\Bundle\AppBundle\Controller;
 
 use Mindy\Bundle\MindyBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

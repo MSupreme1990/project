@@ -1,0 +1,11 @@
+parameters:
+    file.local_directory: '%kernel.root_dir%/../web/media'
+    file.filesystem: 'oneup_flysystem.default_filesystem'
+    mindy.mail.default_from: noreply@super-site.com
+    session.attribute_bag.class: Symfony\Component\HttpFoundation\Session\Attribute\NamespacedAttributeBag
+    session.storage.options:
+        cookie_lifetime: 604800
+        gc_maxlifetime: 604800
+    kernel.charset: UTF-8
+    kernel.secret: super-secret
+    kernel.default_locale: ru

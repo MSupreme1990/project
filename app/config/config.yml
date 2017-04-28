@@ -1,18 +1,46 @@
 imports:
-    - { resource: "admin.yml" }
+    - { resource: parameters.yml }
+    - { resource: admin.yml }
+    - { resource: imagine.yml }
 
-parameters:
-    mail.from: "noreply@my-site.com"
-    kernel.charset: UTF-8
-    kernel.secret: very-secret
-    kernel.default_locale: ru
+form:
+    themes:
+        - 'default'
+        - 'flexy'
+
+sitemap:
+    host: super-site.com
+    scheme: https
+    save_path: '%kernel.root_dir%/../web'
+
+ivory_ck_editor:
+    configs:
+        default:
+            filebrowserBrowseUrl: "/core/file/list?wysiwyg=ckeditor"
+            filebrowserWindowWidth: 800
+            filebrowserWindowHeight: 500
+            toolbar: 'default_toolbar'
+            language: ru
+
+    toolbars:
+        configs:
+            default_toolbar: [ '@basic', '@paste', '-', '@media', '-', "@link", "-", "@extra" ]
+        items:
+            basic: ['Bold', 'Italic', 'Strike', 'RemoveFormat', 'Blockquote', 'Styles', 'Format', 'Table', 'HorizontalRule']
+            list: ['NumberedList', 'BulletedList']
+            media: ['Image']
+            paste: ['PasteText', 'PasteFromWord']
+            link: ['Link', 'Unlink', 'Anchor']
+            extra: ['Templates', 'Source', '-', 'Maximize']
 
 oneup_flysystem:
     adapters:
         default:
-            local: { directory: '%kernel.root_dir%/../web/media' }
+            local:
+                directory: '%file.local_directory%'
     filesystems:
-        default: { adapter: default }
+        default:
+            adapter: default
 
 monolog:
     handlers:
@@ -29,7 +57,7 @@ framework:
         enabled: true
         enable_annotations: false
     templating:
-        engines: ['php']
+        engines: ['mindy']
     assets:
         version: 'v1'
         version_format: '%%s?v=%%s'
@@ -57,3 +85,15 @@ sensio_framework_extra:
     security: { annotations: false }
     # Defaults to true if the PSR-7 bridge is installed
     psr_message: { enabled: false }
+
+swiftmailer:
+    transport: smtp
+    username: noreply@site.com
+    password: super_secret
+    host: smtp.yandex.ru
+    port: 465
+    encryption: ssl
+    spool:
+        type: file
+        path: '%kernel.root_dir%/spool'
+    sender_address: noreply@site.com

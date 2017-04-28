@@ -2,10 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/bundles/app/css/bundle.css">
+    <script src="/bundles/app/js/bundle.js"></script>
+    {{ render_meta()|safe }}
 </head>
 <body>
-{% block content %}
+
+{% block breadcrumbs %}
+    {% include "_breadcrumb.html" %}
+{% endblock breadcrumbs %}
+
+{% block flash %}
+    {% include "_flash.html" %}
 {% endblock %}
+
+{% block main %}
+    {% block content %}{% endblock %}
+{% endblock %}
+
+<div class="b-wrapper">
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            <div class="b-footer">
+                <p>© 2016 company. Все права защищены. </p>
+                <p>Сайт разработан - <a href="http://studio107.ru/">Студия 107</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

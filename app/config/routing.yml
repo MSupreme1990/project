@@ -5,3 +5,10 @@ app:
 _admin:
     prefix: /core/
     resource: "@AdminBundle/Resources/config/routing.yml"
+
+_admin_file:
+    prefix: /core/file/
+    resource: "@FileBundle/Resources/config/routing.yml"
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

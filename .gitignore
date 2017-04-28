@@ -2,3 +2,6 @@
 .idea
 /app/runtime
 /vendor
+/web/bundles
+
+node_modules

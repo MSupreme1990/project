@@ -1,39 +1,8 @@
 imports:
     - { resource: config.yml }
-    - { resource: security.yml }
 
-parameters:
-    storage.media_dir: "%kernel.root_dir%/../WWW/media"
-    templates:
-        mode: -1
-    database:
-        name: my_db
-        host: localhost
-        port: 3306
-        username: root
-        password: ''
-        driver: pdo_mysql
-
-monolog:
-    handlers:
-        file_log:
-            type: rotating_file
-            path: "%kernel.logs_dir%/%kernel.environment%.log"
-            level: error
-            max_files: 10
-
-swiftmailer:
-    transport: smtp
-    username: noreply@my-site.com
-    password: passwd
-    host: smtp.server.com
-    port: 465
-    encryption: ssl
-    auth_mode: ~
-    spool:
-        type: file
-        path: '%kernel.root_dir%/spool'
-    sender_address: noreply@my-site.com
+template:
+    mode: -1
 
 orm:
     connections:
@@ -44,6 +13,9 @@ orm:
             user: root
             password: ''
             driver: pdo_mysql
+
+sentry:
+    dsn: "https://public:secret@sentry.example.com/1"
 
 services:
     mindy.bundle.mindy.example:

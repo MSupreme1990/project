@@ -1,7 +1,9 @@
 .DS_Store
 .idea
-/app/runtime
+
 /vendor
-/web/bundles
+/var
+/public/bundles
 
 node_modules
+composer.lock

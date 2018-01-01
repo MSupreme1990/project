@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+use Mindy\Application\App;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Debug\Debug;
+
+set_time_limit(0);
+
+require __DIR__.'/../vendor/autoload.php';
+
+$env = substr_count(__DIR__, 'stage') > 0 ? 'stage' : 'prod';
+
+$env = getenv('APP_ENV') ? getenv('APP_ENV') : $env;
+
+if (!class_exists(Application::class)) {
+    throw new \RuntimeException('You need to add "symfony/framework-bundle" as a Composer dependency.');
+}
+
+$input = new ArgvInput();
+$env = $input->getParameterOption(['--env', '-e'], $env);
+$debug = 'prod' !== $env && !$input->hasParameterOption(['--no-debug', '']);
+
+if ($debug) {
+    umask(0000);
+
+    if (class_exists(Debug::class)) {
+        Debug::enable();
+    }
+}
+
+$app = App::createInstance(AppKernel::class, $env, $debug);
+$kernel = $app->getKernel();
+$application = new Application($kernel);
+$application->run($input);

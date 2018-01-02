@@ -1,0 +1,11 @@
+imports:
+    - { resource: parameters.yaml }
+    - { resource: form.yaml }
+    - { resource: framework.yaml }
+    - { resource: imagine.yaml }
+    - { resource: security.yaml }
+    - { resource: swiftmailer.yaml }
+    - { resource: monolog.yaml }
+    - { resource: flysystem.yaml }
+    - { resource: extra.yaml }
+    - { resource: ckeditor.yaml }

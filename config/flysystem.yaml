@@ -1,0 +1,8 @@
+oneup_flysystem:
+    adapters:
+        default:
+            local:
+                directory: '%file.local_directory%'
+    filesystems:
+        default:
+            adapter: default

@@ -1,0 +1,12 @@
+imports:
+    - { resource: config.yaml }
+
+orm:
+    connections:
+        default:
+            dbname: my_db
+            host: localhost
+            port: 3306
+            user: root
+            password: ''
+            driver: pdo_mysql

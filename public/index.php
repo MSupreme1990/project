@@ -10,6 +10,7 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
+use App\Kernel;
 use Mindy\Application\App;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,7 +37,7 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
     Request::setTrustedHosts(explode(',', $trustedHosts));
 }
 
-$app = App::createInstance(AppKernel::class, $env, $debug);
+$app = App::createInstance(Kernel::class, $env, $debug);
 $request = Request::createFromGlobals();
 $kernel = $app->getKernel();
 $response = $kernel->handle($request);

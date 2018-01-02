@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use App\Kernel;
 use Mindy\Application\App;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
@@ -30,7 +31,7 @@ if ($debug) {
     }
 }
 
-$app = App::createInstance(AppKernel::class, $env, $debug);
+$app = App::createInstance(Kernel::class, $env, $debug);
 $kernel = $app->getKernel();
 $application = new Application($kernel);
 $application->run($input);

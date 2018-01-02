@@ -1,0 +1,18 @@
+imports:
+    - { resource: config.yaml }
+
+template:
+    mode: -1
+
+orm:
+    connections:
+        default:
+            dbname: my_db
+            host: localhost
+            port: 3306
+            user: root
+            password: ''
+            driver: pdo_mysql
+
+sentry:
+    dsn: "https://public:secret@sentry.example.com/1"

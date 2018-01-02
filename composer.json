@@ -2,29 +2,38 @@
     "name": "mindy/project",
     "type": "library",
     "license": "MIT",
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "autoload": {
         "psr-4": {
-            "Company\\": "./Company/"
-        },
-        "classmap": [
-            "app/AppKernel.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
+            "Company\\": "./Company/",
+            "App\\": "./src/"
         }
     },
     "require": {
+        "mindy/ckeditor-bundle": "~4.0",
+        "mindy/file-bundle": "~4.0",
+        "mindy/form-bundle": "~4.0",
+        "mindy/mail-bundle": "~4.0",
         "mindy/mindy-bundle": "~4.0",
         "mindy/orm-bundle": "~4.0",
+        "mindy/pagination-bundle": "~4.0",
+        "mindy/sitemap-bundle": "~4.0",
+        "mindy/template-bundle": "~4.0",
+        "sensio/framework-extra-bundle": "^5.1",
+        "sentry/sentry-symfony": "^1.0",
         "symfony/monolog-bundle": "^3.1",
-        "symfony/swiftmailer-bundle": "^3.1",
         "symfony/security-bundle": "^3.4",
-        "sensio/framework-extra-bundle": "^5.1"
+        "symfony/serializer": "~3.0|~4.0",
+        "symfony/swiftmailer-bundle": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5",
-        "symfony/web-server-bundle": "~3.0|~4.0"
+        "symfony/web-server-bundle": "~3.0|~4.0",
+        "symfony/var-dumper": "~3.0|~4.0"
     }
 }

@@ -1,0 +1,11 @@
+swiftmailer:
+    transport: smtp
+    username: noreply@site.com
+    password: super_secret
+    host: smtp.yandex.ru
+    port: 465
+    encryption: ssl
+    spool:
+        type: file
+        path: '%kernel.root_dir%/spool'
+    sender_address: noreply@site.com

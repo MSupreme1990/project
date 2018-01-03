@@ -2,25 +2,16 @@ framework:
     csrf_protection: true
     form: true
     validation:
-        enabled: true
         enable_annotations: false
     templating:
         engines: ['mindy']
     assets:
-        version: 'v1'
-        version_format: '%%s?v=%%s'
-        base_path: ~
-        packages:
-            media:
-                base_path: /media/
+        json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
     serializer:
-        enabled: true
         name_converter: 'serializer.name_converter.camel_case_to_snake_case'
     session:
         handler_id: ~
     translator:
-        enabled: true
         fallbacks: [en]
     router:
-        enabled: true
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource: "%kernel.project_dir%/config/routing.yaml"

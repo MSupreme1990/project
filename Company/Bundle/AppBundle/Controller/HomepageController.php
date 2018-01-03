@@ -10,13 +10,27 @@
 
 namespace Company\Bundle\AppBundle\Controller;
 
+use Company\Bundle\AppBundle\Form\ContactForm;
 use Mindy\Bundle\MindyBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class HomepageController extends Controller
 {
-    public function homepageAction(Request $request)
+    public function homepage(Request $request)
     {
-        return $this->render('app/homepage.html');
+        $form = $this->createForm(ContactForm::class, [], [
+            'method' => 'POST',
+            'action' => $this->generateUrl('homepage')
+        ]);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isRequired()) {
+            $this->addFlash('success', 'Ваш запрос успешно отправлен');
+
+            return $this->redirect($request->getRequestUri());
+        }
+
+        return $this->render('app/homepage.html', [
+            'form' => $form->createView()
+        ]);
     }
 }

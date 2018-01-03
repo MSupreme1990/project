@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/bundles/app/css/bundle.css">
-    <script src="/bundles/app/js/bundle.js"></script>
+    <link rel="stylesheet" href="{{ preload(asset('build/css/app.css')) }}">
+    <script src="{{ preload(asset('build/js/app.js')) }}"></script>
     {{ render_meta()|safe }}
 </head>
 <body>
-
-{% block breadcrumbs %}
-    {% include "_breadcrumb.html" %}
-{% endblock breadcrumbs %}
-
-{% block flash %}
-    {% include "_flash.html" %}
-{% endblock %}
-
-{% block main %}
-    {% block content %}{% endblock %}
-{% endblock %}
-
 <div class="b-wrapper">
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            {% block breadcrumbs %}
+                {% include "_breadcrumb.html" %}
+            {% endblock breadcrumbs %}
+
+            {% block flash %}
+                {% include "_flash.html" %}
+            {% endblock %}
+
+            {% block main %}
+                {% block content %}{% endblock %}
+            {% endblock %}
+        </div>
+    </div>
+
     <div class="b-row">
         <div class="b-col b-col_small_12">
             <div class="b-footer">
@@ -31,6 +34,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

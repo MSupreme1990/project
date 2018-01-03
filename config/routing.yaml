@@ -1,14 +1,6 @@
 app:
     prefix: /
-    resource: "@AppBundle/Resources/config/routing/default.yml"
-
-_admin:
-    prefix: /core/
-    resource: "@AdminBundle/Resources/config/routing.yml"
-
-_admin_file:
-    prefix: /core/file/
-    resource: "@FileBundle/Resources/config/routing.yml"
+    resource: "@AppBundle/Resources/config/routing.yaml"
 
 _liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    resource: "@LiipImagineBundle/Resources/config/routing.yaml"

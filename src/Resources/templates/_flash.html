@@ -1,14 +1,17 @@
-{% set flash = request.getSession.getFlashBag().all() %}
-{% if flash|length > 0 %}
-    <div class="b-wrapper">
-        <div class="b-row">
-            <div class="b-col b-col_small_12">
-                {% for messages in flash %}
-                    {% for flash_message in messages %}
-                        <div class="flash-notice">{{ flash_message }}</div>
+<div class="b-flash b-flash_success">Ваш запрос успешно отправлен</div>
+{% if request.hasPreviousSession() %}
+    {% set flashes = request.getSession().getFlashBag().all() %}
+    {% if flashes|length > 0 %}
+        <div class="b-wrapper">
+            <div class="b-row">
+                <div class="b-col b-col_small_12">
+                    {% for type, messages in flashes %}
+                        {% for message in messages %}
+                            <div class="b-flash b-flash_{{ type }}">{{ message }}</div>
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endif %}

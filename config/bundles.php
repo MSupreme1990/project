@@ -29,6 +29,8 @@ return [
     Mindy\Bundle\CKEditorBundle\CKEditorBundle::class => ['all' => true],
     Sentry\SentryBundle\SentryBundle::class => ['prod' => true],
     Mindy\Bundle\SitemapBundle\SitemapBundle::class => ['all' => true],
+    Mindy\Bundle\SeoBundle\SeoBundle::class => ['all' => true],
+    Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
 
     Company\Bundle\AppBundle\AppBundle::class => ['all' => true],
 ];

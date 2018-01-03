@@ -1,9 +1,12 @@
 .DS_Store
 .idea
+.env
 
 /vendor
 /var
+/public/build
 /public/bundles
 
 node_modules
 composer.lock
+*.sqlite

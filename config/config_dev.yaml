@@ -1,6 +1,9 @@
 imports:
     - { resource: config.yaml }
 
+template:
+    mode: 1
+
 orm:
     connections:
         default:

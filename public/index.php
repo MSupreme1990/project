@@ -13,13 +13,17 @@ require __DIR__.'/../vendor/autoload.php';
 use App\Kernel;
 use Mindy\Application\App;
 use Symfony\Component\Debug\Debug;
+use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
 require __DIR__.'/../vendor/autoload.php';
 
-$env = substr_count(__DIR__, 'stage') > 0 ? 'stage' : 'prod';
+if (class_exists(Dotenv::class)) {
+    (new Dotenv())->load(__DIR__ . '/../.env');
+}
 
-$env = getenv('APP_ENV') ? getenv('APP_ENV') : $env;
+$env = substr_count(__DIR__, 'stage') > 0 ? 'stage' : 'prod';
+$env = $_ENV['APP_ENV'] ?? $env;
 
 $debug = getenv('APP_DEBUG') ? getenv('APP_DEBUG') : 'prod' !== $env;
 

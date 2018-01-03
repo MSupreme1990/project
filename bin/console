@@ -6,14 +6,18 @@ use Mindy\Application\App;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Debug\Debug;
+use Symfony\Component\Dotenv\Dotenv;
 
 set_time_limit(0);
 
 require __DIR__.'/../vendor/autoload.php';
 
-$env = substr_count(__DIR__, 'stage') > 0 ? 'stage' : 'prod';
+if (class_exists(Dotenv::class)) {
+    (new Dotenv())->load(__DIR__.'/../.env');
+}
 
-$env = getenv('APP_ENV') ? getenv('APP_ENV') : $env;
+$env = substr_count(__DIR__, 'stage') > 0 ? 'stage' : 'prod';
+$env = $_ENV['APP_ENV'] ?? $env;
 
 if (!class_exists(Application::class)) {
     throw new \RuntimeException('You need to add "symfony/framework-bundle" as a Composer dependency.');

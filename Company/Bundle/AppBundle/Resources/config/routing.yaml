@@ -1,0 +1,4 @@
+homepage:
+    path: /
+    defaults:
+        _controller: Company\Bundle\AppBundle\Controller\HomepageController::homepage

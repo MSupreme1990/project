@@ -1,0 +1,9 @@
+admin:
+    menu:
+        -
+            name: 'SEO'
+            route: 'admin_seo_seo_list'
+            children:
+                -
+                    name: 'Мета шаблоны'
+                    route: 'admin_seo_template_list'

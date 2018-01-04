@@ -2,7 +2,7 @@
     "devDependencies": {
         "@symfony/webpack-encore": "~0.17.0",
         "autoprefixer": "^7.2.2",
-        "flexy-framework": "^4.1.9",
+        "flexy-framework": "^4.1.11",
         "node-sass": "^4.7.2",
         "postcss-csso": "^3.0.0",
         "postcss-flexbugs-fixes": "^3.2.0",
@@ -13,6 +13,7 @@
     "private": true,
     "scripts": {
         "dev-server": "encore dev-server",
+        "dev-server-hot": "encore dev-server --hot",
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production"

@@ -1,1 +1,3 @@
-console.log('hello world');
+import './hmr';
+
+import './block/flash';

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{{ preload(asset('build/css/app.css')) }}">
-    <script src="{{ preload(asset('build/js/app.js')) }}"></script>
     {{ render_meta()|safe }}
 </head>
 <body>
@@ -28,11 +27,12 @@
     <div class="b-row">
         <div class="b-col b-col_small_12">
             <div class="b-footer">
-                <p>© 2016 company. Все права защищены. </p>
-                <p>Сайт разработан - <a href="http://studio107.ru/">Студия 107</a></p>
+                <div>© 2016 company. Все права защищены.</div>
+                <div>Сайт разработан - <a href="http://studio107.ru/">Студия 107</a></div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ preload(asset('build/js/app.js')) }}"></script>
 </body>
 </html>

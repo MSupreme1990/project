@@ -1,5 +1,6 @@
 imports:
     - { resource: parameters.yaml }
+    - { resource: admin.yaml }
     - { resource: form.yaml }
     - { resource: framework.yaml }
     - { resource: imagine.yaml }

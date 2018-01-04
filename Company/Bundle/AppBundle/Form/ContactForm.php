@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Mindy Framework.
- * (c) 2017 Maxim Falaleev
+ * (c) 2018 Maxim Falaleev
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,18 +27,18 @@ class ContactForm extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Ваше имя',
                 'constraints' => [
-                    new Assert\NotBlank
-                ]
+                    new Assert\NotBlank(),
+                ],
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Ваша эл. почта',
                 'constraints' => [
-                    new Assert\NotBlank,
-                    new Assert\Email
-                ]
+                    new Assert\NotBlank(),
+                    new Assert\Email(),
+                ],
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Отправить'
+                'label' => 'Отправить',
             ]);
     }
 }

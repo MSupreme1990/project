@@ -2,5 +2,13 @@ app:
     prefix: /
     resource: "@AppBundle/Resources/config/routing.yaml"
 
+admin:
+    prefix: /admin
+    resource: "@AdminBundle/Resources/config/routing.yaml"
+
+admin_seo:
+    prefix: /admin/seo
+    resource: "@SeoBundle/Resources/config/routing_admin.yaml"
+
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.yaml"

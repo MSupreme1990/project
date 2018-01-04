@@ -15,14 +15,16 @@
         }
     },
     "require": {
+        "mindy/admin-bundle": "dev-master",
         "mindy/ckeditor-bundle": "~4.0",
         "mindy/file-bundle": "~4.0",
         "mindy/form-bundle": ">=4.0.3",
         "mindy/mail-bundle": "~4.0",
+        "mindy/migration-bundle": "~1.0",
         "mindy/mindy-bundle": ">=4.0.2",
         "mindy/orm-bundle": "~4.0",
-        "mindy/pagination-bundle": "~4.0",
-        "mindy/seo-bundle": ">=4.0.2",
+        "mindy/pagination-bundle": ">=4.0.1",
+        "mindy/seo-bundle": ">=4.0.3",
         "mindy/sitemap-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^5.1",
         "sentry/sentry-symfony": "^1.0",

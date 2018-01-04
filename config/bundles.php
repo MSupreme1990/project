@@ -31,6 +31,7 @@ return [
     Mindy\Bundle\SitemapBundle\SitemapBundle::class => ['all' => true],
     Mindy\Bundle\SeoBundle\SeoBundle::class => ['all' => true],
     Mindy\Bundle\AdminBundle\AdminBundle::class => ['all' => true],
+    Mindy\Bundle\MenuBundle\MenuBundle::class => ['all' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
 
     Company\Bundle\AppBundle\AppBundle::class => ['all' => true],

@@ -1,9 +1,19 @@
 admin:
     menu:
         -
-            name: 'SEO'
-            route: 'admin_seo_seo_list'
+            name: 'Контент'
+            icon: '&#xE14D;'
             children:
+                -
+                    name: 'Меню'
+                    route: 'admin_menu_list'
+        -
+            name: 'Настройки'
+            icon: '&#xE8B8;'
+            children:
+                -
+                    name: 'Мета информация'
+                    route: 'admin_seo_seo_list'
                 -
                     name: 'Мета шаблоны'
                     route: 'admin_seo_template_list'

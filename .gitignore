@@ -2,6 +2,7 @@
 .idea
 .env
 
+/Mindy/Bundle/MozaicBundle
 /vendor
 /var
 /public/build
